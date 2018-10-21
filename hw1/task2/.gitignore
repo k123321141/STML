@@ -1,0 +1,6 @@
+kaggle/
+runs/
+glove/
+*.pt
+text/
+mid/
