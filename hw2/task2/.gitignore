@@ -1,2 +1,5 @@
 log.txt
 log
+runs/
+glove/
+best.txt
