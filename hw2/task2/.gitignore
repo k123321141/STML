@@ -3,3 +3,5 @@ log
 runs/
 glove/
 best.txt
+*.txt
+*.csv
