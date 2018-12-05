@@ -1,4 +1,3 @@
-
 import argparse
 import re
 import sys
@@ -213,11 +212,7 @@ def testing(sentence):
             output_words = evaluate(sentence)
             break
         except KeyError,e:
-            global c
-            c += 1
-            print 'e',e
             sub = input_lang.index2word[np.random.randint(input_lang.n_words)]
-            print 'c',c,e.message,sub
             sentence = sentence.replace(e.message,sub)
 
     s = ''

@@ -1,0 +1,6 @@
+*.csv
+*.pl
+*.txt
+.ipynb_checkpoints/
+*.zip
+*.pkl
