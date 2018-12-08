@@ -10,11 +10,14 @@ def main(args):
         writer = csv.writer(csv_file)
         for idx, line in enumerate(raw_file):
             sentence = line.strip().split(' ')
-            if len(sentence) == 0:
+            if len(line.strip()) == 0:
                 pos_tags = []
                 tone = 'NONE'
             else:
-                segments, pos_tags = zip(*jieba.posseg.cut(''.join(sentence)))
+                try:
+                    segments, pos_tags = zip(*jieba.posseg.cut(''.join(sentence)))
+                except ValueError:
+                    print('out : %d, [%s],%d' % (idx,''.join(sentence),len(line.strip())))
                 # sentence[-1][-1]: the last word of the last token in the sentence
                 tone = lazy_pinyin(sentence[-1][-1], style=Style.FINALS, strict=False)[0]
             seg_length = len(sentence)
